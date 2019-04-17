@@ -1,0 +1,54 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.font{
+  font-size: 12px;
+}
+</style>
+
+<%= link_to("Add new Member",{:controller=>"member/index"})%><br>
+<%= link_to("Show All Members",{:controller=>"member/read"})%><br>
+
+<h3> Show <h3/>
+  <table class="listing" summary="Link List">
+  <tr class="header">
+  <th>Select to See by</th>
+  <th>Address</th>
+  <th>Poll</th>
+  <th>Postal Code</th>
+  <th>Caption Name</th>
+  </tr>
+  <tr class="font">
+  <td>Sort by: </td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/address"} %></td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/poll"} %></td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/postal_code"} %></td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/captionName"} %></td>
+  </tr>
+  </table>
+<br><br>
+<h3> Download <h3/>
+  <table class="listing" summary="Link List">
+  <tr class="header">
+  <th>Select to Download</th>
+  <th>Address</th>
+  <th>Poll</th>
+  <th>Postal Code</th>
+  <th>Caption Name</th>
+  </tr>
+  <tr class="font">
+  <td>Sort by: </td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/by_address.csv"} %>|
+  <%= link_to "Excel",{:controller=>"OrderBy/by_address.xls"} %></td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/by_poll.csv"} %>|
+  <%= link_to "Excel",{:controller=>"OrderBy/by_poll.xls"} %></td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/by_postal_code.csv"} %>|
+  <%= link_to "Excel",{:controller=>"OrderBy/by_postal_code.xls"} %></td>
+  <td><%= link_to "CSV",{:controller=>"OrderBy/by_captionName.csv"} %>|
+  <%= link_to "Excel",{:controller=>"OrderBy/by_captionName.xls"} %></td>
+  </tr>
+  </table>

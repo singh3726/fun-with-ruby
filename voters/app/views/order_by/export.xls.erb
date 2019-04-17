@@ -1,0 +1,38 @@
+<h1>OrderBy Export</h1>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.font{
+  font-size: 12px;
+}
+</style>
+<table class="listing" summary="Caption List">
+<tr class="header">
+<th>Id</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Phone No</th>
+<th>Email</th>
+<th>Address</th>
+<th>Postal Code</th>
+<th>Poll No</th>
+<th>Caption Name</th>
+
+</tr>
+<% @mem.each do |c| %>
+<tr class="font">
+<td ><%=c.id %></td>
+<td><%=c.first_name %></td>
+<td><%=c.last_name %></td>
+<td><%=c.phno%></td>
+<td><%=c.email %></td>
+<td><%=c.address %></td>
+<td><%=c.postal_code%></td>
+<td><%=c.poll_no %></td>
+<td><%=c.caption_name %></td>
+<td>
+</tr>
+<% end %>
+</table>

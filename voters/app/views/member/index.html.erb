@@ -1,0 +1,53 @@
+<h1>Member#index</h1>
+
+  <%= form_for(:mem,:url=>{:action =>'new'})do |f|%>
+
+  <table summary="Member Fields">
+
+  <tr>
+  <th>First Name</th>
+  <td><%= f.text_field(:first_name) %></td>
+  </tr>
+  <tr>
+  <th>Last Name</th>
+  <td><%= f.text_field(:last_name) %></td>
+  </tr>
+  <tr>
+  <th>Address</th>
+  <td><%= f.text_field(:address) %></td>
+  </tr>
+  <tr>
+  <th>Phone Number</th>
+  <td><%= f.text_field(:phno) %></td>
+  </tr>
+  <tr>
+  <th>Email</th>
+  <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+  <th>Postal Code</th>
+  <td><%= f.text_field(:postal_code) %></td>
+  </tr>
+  <tr>
+  <th>Poll No</th>
+  <td><%= f.text_field(:poll_no) %></td>
+  </tr>
+  <tr>
+    <th>Caption Name</th>
+    <td><%= f.text_field(:caption_name) %></td>
+    </tr>
+
+
+  </table>
+  <div>
+  <%= submit_tag("Create Member") %>
+  </div>
+  <%end%>
+
+
+
+  <%= form_tag import_member_index_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+
+  <% end %>

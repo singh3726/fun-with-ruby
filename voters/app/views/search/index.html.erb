@@ -1,0 +1,38 @@
+<h1> Advance Search</h1>
+<%= form_for(:search,:url=>{:action =>'show'})do |f|%>
+
+
+  <table summary="Member Fields">
+  <tr>
+  <th>Address</th>
+   <td><%= f.text_field(:address) %></td>
+  </tr>
+  <tr>
+  <th>Phone Number</th>
+  <td><%= f.text_field(:phno) %></td>
+  </tr>
+  <tr>
+  <th>Email</th>
+  <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+  <th>Postal Code</th>
+  <td><%= f.text_field(:postal_code) %></td>
+  </tr>
+  <tr>
+  <th>Poll No</th>
+  <td><%= f.text_field(:poll_no) %></td>
+  </tr>
+  <tr>
+    <th>Caption Name</th>
+    <td><%= f.text_field(:caption_name) %></td>
+    </tr>
+
+
+  </table>
+
+
+
+<div class="actions"><%= f.submit "Search", class: "pure-button pure-button-primary" %></div>
+
+<% end %>
