@@ -1,0 +1,49 @@
+<div>
+<h2>Create Account</h2>
+
+
+
+<%= form_for(:user, :url=>{:controller=>'pages#create'})do |f|%>
+
+<table summary="Sign up for users">
+
+<tr>
+<th>Name</th>
+<td><%= f.text_field(:name) %></td>
+</tr>
+<tr>
+<th>Phone Number</th>
+<td><%= f.text_field(:phno) %></td>
+</tr>
+<tr>
+<th>Address</th>
+<td><%= f.text_field(:address) %></td>
+</tr>
+<tr>
+<th>Postal Code</th>
+<td><%= f.text_field(:postal_code) %></td>
+</tr>
+<tr>
+<th>Email</th>
+<td><%= f.text_field(:email) %></td>
+</tr>
+<tr>
+<th>Who Are you?</th>
+<td>
+<%= f.collection_select :WhoYou_name,WhoYou.order(:id), :id, :name,
+include_blank: true %></td>
+</tr>
+
+
+
+</table>
+<div class="checkbox">
+  <label>
+    <%= f.check_box :terms_of_service %><strong> I accept the terms and conditions<strong>
+  </label>
+</div>
+<div>
+<%= submit_tag("Create Account") %>
+</div>
+<%end%>
+</div>
